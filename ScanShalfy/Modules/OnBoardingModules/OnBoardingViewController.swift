@@ -10,6 +10,12 @@ import UIKit
 final class OnBoardingViewController: UIViewController{
     
     weak var onBoardingCoordinator: OnBoardingCoordinator?
+    private var onBoardingView: OnBoardingView!
+    
+    override func loadView() {
+        onBoardingView = OnBoardingView()
+        view = onBoardingView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
