@@ -21,6 +21,10 @@ final class OnBoardingCoordinator: BaseCoordinator{
         self.navigationController.pushViewController(onBoardVC, animated: true)
     }
     
-    
+    func goToAuthVC() {
+        let authCoordinator = AuthCoordinator(navigationController: navigationController)
+        add(coordinator: authCoordinator)
+        authCoordinator.start()
+    }
     
 }

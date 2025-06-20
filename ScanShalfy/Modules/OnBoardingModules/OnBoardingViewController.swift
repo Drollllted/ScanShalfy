@@ -20,6 +20,13 @@ final class OnBoardingViewController: UIViewController{
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .gray
+        onBoardingView.goButton.addTarget(self, action: #selector(goToAuth), for: .touchUpInside)
     }
+    
+    @objc private func goToAuth() {
+        onBoardingCoordinator?.goToAuthVC()
+    }
+    
+    
     
 }
