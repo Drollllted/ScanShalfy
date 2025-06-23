@@ -25,9 +25,16 @@ class AppCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        let onBoarding = OnBoardingCoordinator(navigationController: navigationController)
-        add(coordinator: onBoarding)
-        onBoarding.start()
+        
+        if UserDefaults.standard.dictionary(forKey: "User") != nil {
+            let main = MainCoordinator(navigationController: navigationController)
+            add(coordinator: main)
+            main.start()
+        } else {
+            let onBoarding = OnBoardingCoordinator(navigationController: navigationController)
+            add(coordinator: onBoarding)
+            onBoarding.start()
+        }
     }
     
 }

@@ -21,4 +21,10 @@ final class AuthCoordinator: BaseCoordinator{
         self.navigationController.pushViewController(authVC, animated: true)
     }
     
+    func goToMainVC() {
+        let main = MainCoordinator(navigationController: navigationController)
+        add(coordinator: main)
+        main.start()
+    }
+    
 }
